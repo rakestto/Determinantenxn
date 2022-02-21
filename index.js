@@ -59,6 +59,7 @@ const reorderMatrix = (column) => {
     }
   });
 };
+
 const reorderRowsWithZeros = (column) => {
   Matrix = Matrix.sort((a, b) => {
     if (b[column] === 0) {
