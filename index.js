@@ -15,13 +15,13 @@ function createMatrix(n) {
   result = initializeMatrix(n);
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
-      result[i][j] = getRandomArbitrary(-3, 12);
+      result[i][j] = getRandomArbitrary(1, 4);
     }
   }
   return result;
 }
 
-let Matrix = createMatrix(100);
+// let Matrix = createMatrix(100);
 // let Matrix = [
 //   [3, 2, 3, 2, 4],
 //   [3, 4, 3, 2, 2],
@@ -30,12 +30,12 @@ let Matrix = createMatrix(100);
 //   [5, 3, 2, 2, 3],
 // ];
 
-// let Matrix = [
-//     [0, 2, 5, 9],
-//     [10, 7, 8, 6],
-//     [5, 4, 3, 2],
-//     [1, 0, 9, 2],
-// ]; // = -442
+let Matrix = [
+  [0, 2, 5, 9],
+  [10, 7, 8, 6],
+  [5, 4, 3, 2],
+  [1, 0, 9, 2],
+]; // = -442
 
 //MATIX WITH 0 + -30
 // let Matrix = [
@@ -45,8 +45,6 @@ let Matrix = createMatrix(100);
 //   [3, 3, 5, 3, 2],
 //   [5, 4, 5, 3, 4],
 // ];
-
-console.log(Matrix);
 
 const reorderMatrix = (column) => {
   Matrix = Matrix.sort((a, b) => {
@@ -71,8 +69,6 @@ const reorderRowsWithZeros = (column) => {
 
 reorderMatrix(0);
 
-console.log(Matrix);
-
 const calculateZeros = (targetNumber, currentTopNumber, row, column) => {
   if (targetNumber === 0) return;
   if (currentTopNumber === 0) {
@@ -96,11 +92,8 @@ for (let i = 0; i < Matrix.length - 1; i++) {
 
 let det = 1;
 
-console.log(Matrix);
-
 for (let i = 0; i < Matrix.length; i++) {
   det *= Matrix[i][i];
 }
 
-console.log(Matrix);
 console.log(det.toFixed(0));
